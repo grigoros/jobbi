@@ -1,8 +1,7 @@
-import Dashboard from "./Dashboard"
 import Landing from "./Landing"
 import Error from "./Error"
-import Register from "./Register"
+import Access from "./Access"
 
 export {
-  Dashboard, Landing, Error, Register
+  Landing, Error, Access
 }
