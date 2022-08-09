@@ -19,7 +19,7 @@ return (
         <p>
           Food truck tacos church-key, live-edge ramps poutine fashion axe kickstarter leggings. Brunch stumptown enamel pin, iPhone celiac vexillologist polaroid. Blue bottle listicle mixtape, squid deep v tote bag irony selfies offal roof party dreamcatcher.
         </p>
-        <Link to='/register' className="btn btn-hero">
+        <Link to='/access' className="btn btn-hero">
           Login/Register
         </Link>
       </div>
