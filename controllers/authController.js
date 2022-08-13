@@ -6,7 +6,7 @@ const register = async (req, res) => {
   const { name, email, password } = req.body
 
   if(!name || !email || !password) {
-    throw new BadRequestError('please provide all values')
+    throw new BadRequestError('Please provide all values')
   }
   const userAlreadyExists = await User.findOne({email})
   if(userAlreadyExists) {
@@ -62,7 +62,6 @@ const updateUser = async (req, res) => {
   res.status(StatusCodes.OK).json({ user, token, location: user.location })
 
   console.log(req.user)
-  res.send('update user')
 }
 
 export { register, login, updateUser }

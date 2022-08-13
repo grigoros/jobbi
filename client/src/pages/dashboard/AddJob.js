@@ -4,7 +4,8 @@ import { useAppContext } from '../../context/appContext'
 import Wrapper from '../../assets/wrappers/DashboardFormPage'
 
 const AddJob = () => {
-  const { 
+  const {
+    isLoading, 
     showAlert,
     displayAlert,
     position,
@@ -16,6 +17,9 @@ const AddJob = () => {
     statusOptions,
     isEditing,
     handleChange,
+    clearValues,
+    createJob,
+    editJob,
   } = useAppContext()
   
 const handleSubmit = ((e) => {
@@ -24,7 +28,11 @@ const handleSubmit = ((e) => {
     displayAlert()
     return
   }
-  console.log('create job')
+  if(isEditing) {
+    editJob()
+    return
+  }
+  createJob()
 })
 
   const handleJobInput = (e) => {
@@ -81,8 +89,14 @@ const handleSubmit = ((e) => {
           
           {/* btn container */}
           <div className="btn-container">
-            <button type='submit' className='btn btn-block submit' onClick={handleSubmit}>
+            <button type='submit' className='btn btn-block submit' onClick={handleSubmit} disabled={isLoading}>
               submit
+            </button>
+            <button className='btn btn-block clean-btn' onClick={(e) => {
+              e.preventDefault()
+              clearValues()
+            }}>
+              clear
             </button>
           </div>
         </div>
